@@ -1,0 +1,14 @@
+services:
+  agentic-cms-ui:
+    image: ghcr.io/${GHCR_OWNER}/agentic-cms-ui:latest
+    container_name: agentic-cms-ui
+    restart: unless-stopped
+    ports:
+      - "5176:80"
+    networks:
+      - rag-shared-network
+
+networks:
+  rag-shared-network:
+    external: true
+    name: rag-shared-network
