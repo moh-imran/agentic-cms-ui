@@ -25,21 +25,21 @@ jobs:
             mkdir -p /home/deploy/agentic-cms
 
             cat > /home/deploy/agentic-cms/docker-compose.yml << 'EOF'
-services:
-  agentic-cms-ui:
-    image: ghcr.io/${{ secrets.GHCR_USER }}/agentic-cms-ui:latest
-    container_name: agentic-cms-ui
-    restart: unless-stopped
-    ports:
-      - "5176:80"
-    networks:
-      - rag-shared-network
+            services:
+              agentic-cms-ui:
+                image: ghcr.io/${{ secrets.GHCR_USER }}/agentic-cms-ui:latest
+                container_name: agentic-cms-ui
+                restart: unless-stopped
+                ports:
+                  - "5176:80"
+                networks:
+                  - rag-shared-network
 
-networks:
-  rag-shared-network:
-    external: true
-    name: rag-shared-network
-EOF
+            networks:
+              rag-shared-network:
+                external: true
+                name: rag-shared-network
+            EOF
 
             cd /home/deploy/agentic-cms
             GHCR_OWNER=${{ secrets.GHCR_USER }} docker compose pull
