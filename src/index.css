@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f3f4f6;
+  }
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.badge-complaint {
+  @apply bg-rose-500/20 text-rose-300 border border-rose-500/30;
+}
+
+.badge-inquiry {
+  @apply bg-sky-500/20 text-sky-300 border border-sky-500/30;
+}
+
+.badge-suggestion {
+  @apply bg-amber-500/20 text-amber-300 border border-amber-500/30;
+}
+
+.badge-stage {
+  @apply bg-indigo-500/20 text-indigo-300 border border-indigo-500/30;
+}
+
+.node-active {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.8), 0 0 24px rgba(99, 102, 241, 0.45);
+}
+
+.node-done {
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.5);
+}
